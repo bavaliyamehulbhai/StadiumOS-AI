@@ -19,7 +19,7 @@ const systemConfigSchema = new mongoose.Schema({
   aiAnalysisCooldownMs: { type: Number, default: 30000 },
   
   // Advanced AI Settings
-  aiModel: { type: String, enum: ['llama-3.3-70b-versatile', 'mixtral-8x7b-32768', 'gemma-7b-it'], default: 'llama-3.3-70b-versatile' },
+  aiModel: { type: String, enum: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant', 'mixtral-8x7b-32768', 'gemma-7b-it'], default: 'llama-3.1-8b-instant' },
   aiPersonality: { type: String, enum: ['Standard', 'Strict (Security Focus)', 'Empathetic (Fan Focus)'], default: 'Standard' },
   autoResolveIncidents: { type: Boolean, default: false },
 

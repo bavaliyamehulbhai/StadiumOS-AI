@@ -32,7 +32,7 @@ export const generateCrowdInsights = async (stadiumId = null) => {
           'Authorization': `Bearer ${groqApiKey}`
         },
         body: JSON.stringify({
-          model: 'llama-3.3-70b-versatile',
+          model: process.env.AI_MODEL || 'llama-3.1-8b-instant',
           messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
@@ -174,7 +174,7 @@ export const generateCrowdPrediction = async (crowdId) => {
             'Authorization': `Bearer ${groqApiKey}`
           },
           body: JSON.stringify({
-            model: 'llama-3.3-70b-versatile',
+            model: process.env.AI_MODEL || 'llama-3.1-8b-instant',
             messages: [{ role: 'user', content: prompt }],
             temperature: 0.2,
             response_format: { type: 'json_object' }

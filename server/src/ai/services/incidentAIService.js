@@ -3,7 +3,7 @@ import { buildIncidentContext } from './incidentContextService.js';
 import { generateIncidentPrompt } from './incidentPromptService.js';
 import IncidentAIAnalysis from '../../models/IncidentAIAnalysis.js';
 
-const MODEL = 'llama-3.3-70b-versatile'; // Groq's current recommended model
+const MODEL = process.env.AI_MODEL || 'llama-3.1-8b-instant';
 
 export const analyzeIncident = async (incidentId, forceRegenerate = false) => {
   // Check if analysis already exists
@@ -67,8 +67,8 @@ export const analyzeIncident = async (incidentId, forceRegenerate = false) => {
     // Fallback Mock AI Response for Demo purposes when API limits hit
     const updateData = {
       incident: incidentId,
-      summary: `[Fallback] Emergency detected regarding ${context.incident.title}. Immediate response required.`,
-      severity: context.incident.priority === 'Critical' ? 'High' : 'Medium',
+      summary: `[Fallback] Emergency detected regarding ${context.incidentTitle}. Immediate response required.`,
+      severity: context.reportedPriority === 'Critical' ? 'High' : 'Medium',
       confidence: 95,
       recommendedActions: [
         'Dispatch nearest available volunteer immediately.',

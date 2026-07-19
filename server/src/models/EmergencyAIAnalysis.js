@@ -36,7 +36,7 @@ const emergencyAIAnalysisSchema = new mongoose.Schema({
   immediateActions: [{ type: String }],
   estimatedResolutionMinutes: { type: Number, default: 15 },
   warnings: [{ type: String }],
-  aiModel: { type: String, default: 'llama-3.3-70b-versatile' },
+  aiModel: { type: String, default: process.env.AI_MODEL || 'llama-3.1-8b-instant' },
   generatedAt: { type: Date, default: Date.now }
 }, { timestamps: true });
 

@@ -149,7 +149,7 @@ class AIEventOrchestrator {
             },
             aiGenerated: true,
             aiMetadata: {
-              recommendations: [analysis.recommendedActions]
+              recommendations: analysis.recommendedActions || []
             }
           });
           await this.notifyOrganizers(`AI Drafted Broadcast`, `A Critical emergency broadcast has been drafted for incident: ${incident.title}. Review in Command Center.`, 'Critical', 'Emergency');

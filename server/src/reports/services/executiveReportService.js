@@ -83,7 +83,7 @@ class ExecutiveReportService {
         
         report.status = 'COMPLETED';
         report.aiMetadata = {
-          model: 'llama-3.3-70b-versatile',
+          model: process.env.AI_MODEL || 'llama-3.1-8b-instant',
           generatedAt: new Date(),
           status: 'SUCCESS'
         };

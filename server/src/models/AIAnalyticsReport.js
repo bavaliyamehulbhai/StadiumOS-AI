@@ -24,7 +24,7 @@ const analyticsReportSchema = new mongoose.Schema({
     parkingUtilization: { type: Number, default: 0 },
     availableVolunteers: { type: Number, default: 0 }
   },
-  aiModel: { type: String, default: 'llama-3.3-70b-versatile' },
+  aiModel: { type: String, default: process.env.AI_MODEL || 'llama-3.1-8b-instant' },
   generatedAt: { type: Date, default: Date.now, expires: 86400 } // Auto-delete after 24h
 }, { timestamps: true });
 

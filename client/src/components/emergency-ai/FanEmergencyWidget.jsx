@@ -5,8 +5,8 @@ import { useEmergency } from '@/context/EmergencyContext';
 
 const FanEmergencyWidget = () => {
   const [open, setOpen] = useState(false);
-  const { activeEmergencies } = useEmergency();
-  const hasCritical = activeEmergencies.some(e => e.severity === 'Critical' || e.severity === 'High');
+  const { activeBroadcasts = [] } = useEmergency();
+  const hasCritical = activeBroadcasts.some(e => e.severity === 'CRITICAL' || e.severity === 'HIGH');
 
   return (
     <>
@@ -37,7 +37,7 @@ const FanEmergencyWidget = () => {
                 <h3 className="text-xl font-black text-gray-900">Emergency Help</h3>
                 <p className="text-sm text-gray-500">
                   {hasCritical
-                    ? `⚠ ${activeEmergencies.length} active emergency alert`
+                    ? `⚠ ${activeBroadcasts.length} active emergency alert`
                     : 'Stadium safety assistance'}
                 </p>
               </div>
@@ -49,7 +49,7 @@ const FanEmergencyWidget = () => {
             {hasCritical && (
               <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-5">
                 <p className="text-sm font-bold text-red-800">
-                  🚨 {activeEmergencies[0]?.type} — {activeEmergencies[0]?.zone}
+                  🚨 {activeBroadcasts[0]?.type} — {activeBroadcasts[0]?.zone}
                 </p>
                 <p className="text-xs text-red-600 mt-1">
                   Follow staff instructions and proceed to nearest exit calmly.

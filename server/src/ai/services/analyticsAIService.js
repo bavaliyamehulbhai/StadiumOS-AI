@@ -4,7 +4,7 @@ import { buildAnalyticsPrompt } from './analyticsPromptService.js';
 import AIAnalyticsReport from '../../models/AIAnalyticsReport.js';
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-const MODEL = 'llama-3.3-70b-versatile';
+const MODEL = process.env.AI_MODEL || 'llama-3.1-8b-instant';
 
 /**
  * Generates the AI Executive Report.
