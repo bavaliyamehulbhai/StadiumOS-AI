@@ -1,0 +1,46 @@
+{
+  "name": "stadiumos-server",
+  "version": "1.0.0",
+  "description": "StadiumOS Backend",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "seed": "node src/seed/index.js",
+    "seed:users": "node src/seed/users.seed.js",
+    "seed:stadiums": "node src/seed/stadiums.seed.js",
+    "seed:matches": "node src/seed/matches.seed.js",
+    "seed:incidents": "node src/seed/incidents.seed.js",
+    "seed:tasks": "node src/seed/tasks.seed.js",
+    "seed:notifications": "node src/seed/notifications.seed.js",
+    "seed:clear": "node src/seed/clear.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.2.1",
+    "google-auth-library": "^9.15.1",
+    "groq-sdk": "^0.3.3",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1",
+    "uuid": "^9.0.1",
+    "winston": "^3.13.0",
+    "zod": "^3.22.4",
+    "eventsource-parser": "^1.1.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "nodemon": "^3.1.9"
+  }
+}
