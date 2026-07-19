@@ -3,7 +3,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 const SkeletonDashboard = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" data-testid="skeleton-dashboard">
       {/* Header Skeleton */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>

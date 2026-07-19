@@ -2,7 +2,7 @@ import React from 'react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import AdminDashboard from '../src/pages/admin/Dashboard';
+import VolunteerDashboard from '../src/pages/volunteer/Dashboard';
 import * as dashboardHooks from '../src/hooks/useDashboard';
 
 // Mock Recharts ResponsiveContainer to avoid size errors in jsdom
@@ -16,7 +16,7 @@ vi.mock('recharts', async () => {
   };
 });
 
-describe('Admin Dashboard', () => {
+describe('Volunteer Dashboard', () => {
   beforeEach(() => {
     vi.resetAllMocks();
   });
@@ -26,64 +26,48 @@ describe('Admin Dashboard', () => {
   };
 
   it('displays skeleton loaders while fetching', () => {
-    vi.spyOn(dashboardHooks, 'useAdminDashboard').mockReturnValue({
+    vi.spyOn(dashboardHooks, 'useVolunteerDashboard').mockReturnValue({
       isLoading: true,
       data: null,
       isError: false,
     });
-    vi.spyOn(dashboardHooks, 'useDashboardCharts').mockReturnValue({
-      isLoading: true,
-      data: null,
-    });
 
-    renderWithRouter(<AdminDashboard />);
-    // SkeletonDashboard renders standard loading elements
+    renderWithRouter(<VolunteerDashboard />);
     expect(screen.getByTestId('skeleton-dashboard')).toBeInTheDocument();
   });
 
   it('renders error state on fetch failure', () => {
-    vi.spyOn(dashboardHooks, 'useAdminDashboard').mockReturnValue({
+    vi.spyOn(dashboardHooks, 'useVolunteerDashboard').mockReturnValue({
       isLoading: false,
       data: null,
       isError: true,
       refetch: vi.fn(),
     });
-    vi.spyOn(dashboardHooks, 'useDashboardCharts').mockReturnValue({
-      isLoading: false,
-      data: null,
-    });
 
-    renderWithRouter(<AdminDashboard />);
+    renderWithRouter(<VolunteerDashboard />);
     expect(screen.getByText(/Unable to load dashboard/i)).toBeInTheDocument();
   });
 
   it('renders dashboard content successfully', () => {
     const mockData = {
       stats: {
-        totalUsers: 5000,
-        totalMatches: 10,
-        totalIncidents: 2,
-        criticalIncidents: 0,
+        assignedTasks: 4,
+        myIncidents: 1,
+        completedTasks: 10,
       },
-      recentActivities: [],
-      recentUsers: [],
+      activeTasksList: [],
+      nearbyIncidents: [],
     };
 
-    vi.spyOn(dashboardHooks, 'useAdminDashboard').mockReturnValue({
+    vi.spyOn(dashboardHooks, 'useVolunteerDashboard').mockReturnValue({
       isLoading: false,
       data: mockData,
       isError: false,
     });
-    vi.spyOn(dashboardHooks, 'useDashboardCharts').mockReturnValue({
-      isLoading: false,
-      data: {
-        userGrowth: [],
-        incidentTrends: [],
-      },
-    });
 
-    renderWithRouter(<AdminDashboard />);
-    expect(screen.getByText(/System Administration/i)).toBeInTheDocument();
-    expect(screen.getByText(/Total Registered Users/i)).toBeInTheDocument();
+    renderWithRouter(<VolunteerDashboard />);
+    expect(screen.getByText(/Volunteer Hub/i)).toBeInTheDocument();
+    expect(screen.getByText(/4/)).toBeInTheDocument(); // active tasks count
+    expect(screen.getByText(/Ask AI Copilot/i)).toBeInTheDocument();
   });
 });
