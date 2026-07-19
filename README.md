@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://via.placeholder.com/150/007bff/ffffff?text=StadiumOS+AI" alt="StadiumOS AI Logo" width="150" height="150" />
+
   
   <h1>🏟️ StadiumOS AI</h1>
   <p><strong>The Intelligent Engine for Next-Generation Venue Management</strong></p>
