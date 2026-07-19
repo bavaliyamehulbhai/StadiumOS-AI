@@ -37,24 +37,26 @@ const LandingPage = () => {
       <div className="relative overflow-hidden pt-16 pb-32 lg:pt-32 lg:pb-48 bg-slate-50">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-transparent to-transparent"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight mb-8">
-            AI-Powered Smart Stadium <br className="hidden md:block" />
-            <span className="text-blue-600 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-              & Tournament Operations
+          <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight mb-8 uppercase">
+            STADIUMOS AI <br className="hidden md:block" />
+            <span className="text-blue-600 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 text-4xl md:text-5xl mt-2 block capitalize">
+              The Intelligent Operating System<br />for Smart Stadiums
             </span>
           </h1>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto mb-10">
-            Transform traditional venues into hyper-connected environments. Real-time crowd analytics, AI incident summarization, and dynamic role-based dashboards.
+            AI-powered real-time stadium operations, crowd intelligence, emergency response, and smart fan experiences—all in one platform.
           </p>
           <div className="flex justify-center gap-4">
             <Link to="/login">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white h-14 px-8 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-                🚀 Explore Demo
+                🚀 Explore Live Demo
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-white">
-              📺 Watch Video
-            </Button>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-white">
+                🏗️ View Architecture
+              </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -67,12 +69,12 @@ const LandingPage = () => {
             <p className="mt-4 text-lg text-gray-500">Six core pillars of StadiumOS AI.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <FeatureCard icon={<Bot />} title="AI Assistant" desc="Powered by Llama 3 for instant fan support and automated incident summaries." color="bg-purple-100 text-purple-600" />
-            <FeatureCard icon={<Map />} title="Stadium Navigation" desc="Interactive Leaflet maps guiding fans to their seats and facilities." color="bg-blue-100 text-blue-600" />
-            <FeatureCard icon={<Users />} title="Crowd Analytics" desc="Live heatmaps and congestion monitoring for safety optimization." color="bg-emerald-100 text-emerald-600" />
-            <FeatureCard icon={<Zap />} title="Real-Time Updates" desc="Socket.io powered instant notifications and live dashboards." color="bg-amber-100 text-amber-600" />
-            <FeatureCard icon={<Globe />} title="Multi-language" desc="Seamless translation support for international tournament visitors." color="bg-pink-100 text-pink-600" />
-            <FeatureCard icon={<ShieldAlert />} title="Emergency Response" desc="One-tap SOS and live incident routing to nearest volunteers." color="bg-red-100 text-red-600" />
+            <FeatureCard icon={<Bot />} title="AI Intelligence" desc="Crowd prediction, incident analysis, navigation, and executive intelligence." color="bg-purple-100 text-purple-600" />
+            <FeatureCard icon={<Map />} title="Live Digital Twin" desc="Real-time stadium map showing crowd density, incidents, and volunteer locations." color="bg-blue-100 text-blue-600" />
+            <FeatureCard icon={<Zap />} title="Real-Time Operations" desc="Instant synchronization of tasks, alerts, and analytics across all dashboards." color="bg-emerald-100 text-emerald-600" />
+            <FeatureCard icon={<ShieldAlert />} title="Emergency Response" desc="AI-guided evacuation protocols, safe routing, and instant danger zone alerts." color="bg-red-100 text-red-600" />
+            <FeatureCard icon={<Globe />} title="Smart Navigation" desc="Multilingual AI guiding fans securely through optimal crowd flow paths." color="bg-pink-100 text-pink-600" />
+            <FeatureCard icon={<Users />} title="Multi-Role Collaboration" desc="Connected ecosystem for Admins, Organizers, Volunteers, and Fans." color="bg-amber-100 text-amber-600" />
           </div>
         </div>
       </div>

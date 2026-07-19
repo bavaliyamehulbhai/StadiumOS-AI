@@ -39,8 +39,14 @@ const Login = () => {
     <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
         <div className="text-center mb-8">
+          <div className="flex justify-center mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 text-purple-700 border border-purple-200" title="This environment uses simulated real-time stadium data for demonstration.">
+              <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+              LIVE DEMO MODE
+            </span>
+          </div>
           <h1 className="text-3xl font-bold text-blue-600">StadiumOS AI</h1>
-          <p className="text-gray-500 mt-2">Explore the Interactive Demo</p>
+          <p className="text-gray-500 mt-2">Choose Your Experience</p>
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-6">
